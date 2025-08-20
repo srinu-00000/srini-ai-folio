@@ -19,24 +19,6 @@ const EducationSection = () => {
         'Final Year Project: Advanced Neural Network Architecture for Image Recognition',
         'Research Paper: "Optimization Techniques in Deep Learning Models"'
       ]
-    },
-    {
-      degree: 'Higher Secondary Certificate (Science)',
-      institution: 'St. Xavier\'s Higher Secondary School',
-      location: 'Mumbai, India',
-      period: '2019 - 2021',
-      gpa: '95.2%',
-      status: 'Completed',
-      highlights: [
-        'Mathematics, Physics, Chemistry, Computer Science',
-        'School Topper in Computer Science',
-        'Captain of the Programming Club',
-        'Winner of Inter-school Science Exhibition'
-      ],
-      projects: [
-        'Built a web-based student management system using PHP and MySQL',
-        'Developed a basic AI chatbot for school inquiry system'
-      ]
     }
   ];
 

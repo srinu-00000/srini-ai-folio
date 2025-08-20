@@ -32,33 +32,6 @@ const ProjectsSection = () => {
       github: '#',
       demo: '#',
       featured: true
-    },
-    {
-      title: 'Natural Language Processing Tool',
-      description: 'Advanced NLP application for sentiment analysis and text classification with custom-trained models.',
-      image: projectAI,
-      technologies: ['Python', 'NLTK', 'Transformers', 'FastAPI', 'Docker'],
-      github: '#',
-      demo: '#',
-      featured: false
-    },
-    {
-      title: 'Real-time Chat Application',
-      description: 'Scalable chat application with real-time messaging, file sharing, and user authentication.',
-      image: projectWeb,
-      technologies: ['Socket.io', 'Node.js', 'React', 'MongoDB', 'JWT'],
-      github: '#',
-      demo: '#',
-      featured: false
-    },
-    {
-      title: 'Computer Vision Project',
-      description: 'Object detection and recognition system using deep learning models for real-world applications.',
-      image: projectMobile,
-      technologies: ['Python', 'OpenCV', 'PyTorch', 'Flask', 'AWS EC2'],
-      github: '#',
-      demo: '#',
-      featured: false
     }
   ];
 
