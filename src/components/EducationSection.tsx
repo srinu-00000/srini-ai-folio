@@ -24,18 +24,36 @@ const EducationSection = () => {
 
   const certifications = [
     {
-      name: 'Machine Learning Specialization',
-      issuer: 'Stanford University (Coursera)',
-      date: 'Dec 2023',
-      credentialId: 'ML-2023-12-HSR',
-      skills: ['Machine Learning', 'Python', 'TensorFlow', 'Neural Networks']
+      name: 'Salesforce AI Specialist (Agentforce Workshop)',
+      issuer: 'GeeksforGeeks & Salesforce',
+      date: '2024',
+      credentialId: 'SFAI-2024-HSR',
+      skills: ['Salesforce', 'AI Agents', 'Agentforce', 'Business AI Solutions'],
+      description: 'Successfully completed an industry-grade workshop on building AI Agents using Agentforce. Gained hands-on experience in designing intelligent agents, integrating AI into Salesforce workflows, and solving real-world business use cases with scalable AI solutions.'
     },
     {
-      name: 'Deep Learning Specialization',
-      issuer: 'DeepLearning.AI (Coursera)',
-      date: 'Jan 2024',
-      credentialId: 'DL-2024-01-HSR',
-      skills: ['Deep Learning', 'CNN', 'RNN', 'PyTorch']
+      name: 'IBM Certified in Enterprise-Grade AI',
+      issuer: 'IBM',
+      date: 'June 2024',
+      credentialId: 'IBM-AI-2024-HSR',
+      skills: ['Enterprise AI', 'AI Model Deployment', 'Scalable Solutions', 'AI Strategy'],
+      description: 'Industry-recognized certification focusing on developing and deploying AI-powered solutions at scale. Gained expertise in applying AI models to enterprise challenges.'
+    },
+    {
+      name: 'EZ Training – Python Programming',
+      issuer: 'EZ Training',
+      date: '2024',
+      credentialId: 'EZ-PY-2024-HSR',
+      skills: ['Python', 'Problem Solving', 'Application Development', 'Coding Challenges'],
+      description: 'Completed professional training in Python programming, with emphasis on problem-solving, application building, and preparing for coding challenges.'
+    },
+    {
+      name: 'Java Full Stack with React JS & AI',
+      issuer: 'Brainovision & AICTE',
+      date: 'Dec 2024',
+      credentialId: 'JSFS-AI-2024-HSR',
+      skills: ['Java', 'React JS', 'Full Stack', 'AI Integration', 'Enterprise Applications'],
+      description: 'Hands-on training in Java Full Stack development with React JS integration, combined with practical applications of Artificial Intelligence. Strengthened ability to create enterprise-level applications.'
     },
     {
       name: 'AWS Certified Cloud Practitioner',
@@ -156,6 +174,12 @@ const EducationSection = () => {
                     </div>
                     <span className="text-sm text-muted-foreground">{cert.date}</span>
                   </div>
+                  
+                  {cert.description && (
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {cert.description}
+                    </p>
+                  )}
                   
                   <p className="text-sm text-muted-foreground mb-4">
                     Credential ID: {cert.credentialId}
