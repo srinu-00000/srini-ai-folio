@@ -35,21 +35,45 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const form = new FormData();
+      form.append('access_key', 'e882d258-8bd1-436a-971d-4e5e244f9bc4');
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('subject', formData.subject);
+      form.append('message', formData.message);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: form
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message || 'Something went wrong');
+      }
+    } catch (error) {
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Error Sending Message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
       });
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
