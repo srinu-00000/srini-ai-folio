@@ -7,31 +7,31 @@ import projectMobile from '@/assets/project-mobile.jpg';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'AI-Powered Analytics Dashboard',
-      description: 'A comprehensive machine learning dashboard that provides real-time analytics and predictive insights using TensorFlow and React.',
-      image: projectAI,
-      technologies: ['Python', 'TensorFlow', 'React', 'Node.js', 'MongoDB'],
-      github: '#',
-      demo: '#',
-      featured: true
-    },
-    {
-      title: 'Smart E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with recommendation engine, payment integration, and real-time inventory management.',
+      title: 'Train Ticket Reservation System (TTRS)',
+      description: 'A mini project designed to develop a robust and user-friendly database management system (DBMS) for managing train ticket reservations.',
       image: projectWeb,
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'Stripe', 'AWS'],
+      technologies: ['Java', 'MySQL', 'JDBC', 'Swing', 'SQL'],
       github: '#',
       demo: '#',
       featured: true
     },
     {
-      title: 'Mobile Fitness Tracker',
-      description: 'Cross-platform mobile app with AI-powered workout recommendations and progress tracking using React Native.',
+      title: 'Youth Sports Registration Portal',
+      description: 'An app that allows sportspersons to register for events by providing their details and participate in those events.',
       image: projectMobile,
-      technologies: ['React Native', 'Firebase', 'Python', 'Flask'],
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Bootstrap'],
       github: '#',
       demo: '#',
-      featured: false
+      featured: true
+    },
+    {
+      title: 'Career Simulator',
+      description: 'A platform bridging education and employment. Features include personalized job roadmaps, alumni talks, placement insights, and mentorship to help students secure top job opportunities.',
+      image: projectAI,
+      technologies: ['React', 'Python', 'Django', 'PostgreSQL', 'Machine Learning'],
+      github: '#',
+      demo: '#',
+      featured: true
     },
     {
       title: 'Natural Language Processing Tool',
