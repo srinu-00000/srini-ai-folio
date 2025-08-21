@@ -43,6 +43,14 @@
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 60%), hsl(25 95% 70%));
     
+    /* AI/ML Themed Backgrounds */
+    --gradient-neural: linear-gradient(135deg, hsl(222 84% 5%) 0%, hsl(240 10% 8%) 25%, hsl(262 83% 15%) 50%, hsl(280 100% 10%) 75%, hsl(222 84% 5%) 100%);
+    --gradient-matrix: linear-gradient(45deg, hsl(142 76% 6%) 0%, hsl(158 64% 12%) 25%, hsl(170 100% 8%) 50%, hsl(142 76% 6%) 100%);
+    --gradient-data: linear-gradient(120deg, hsl(217 32% 17%) 0%, hsl(221 39% 11%) 25%, hsl(224 71% 4%) 50%, hsl(217 32% 17%) 100%);
+    --gradient-circuit: linear-gradient(60deg, hsl(262 83% 15%) 0%, hsl(270 95% 25%) 25%, hsl(262 83% 15%) 50%, hsl(280 100% 10%) 75%, hsl(262 83% 15%) 100%);
+    --gradient-ai-glow: radial-gradient(circle at center, hsl(185 84% 25% / 0.15), hsl(0 0% 100%) 70%);
+    --gradient-tech: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 96%) 25%, hsl(185 84% 25% / 0.05) 50%, hsl(0 0% 100%) 100%);
+    
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
@@ -123,6 +131,143 @@
 }
 
 @layer components {
+  /* AI/ML Themed Background Classes */
+  .neural-bg {
+    background: var(--gradient-neural);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neural-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(185 84% 25% / 0.4) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(25 95% 60% / 0.3) 1px, transparent 1px),
+      radial-gradient(circle at 50% 10%, hsl(185 84% 25% / 0.2) 2px, transparent 2px);
+    background-size: 60px 60px, 80px 80px, 100px 100px;
+    animation: neuralPulse 8s ease-in-out infinite;
+  }
+
+  .matrix-bg {
+    background: var(--gradient-matrix);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .matrix-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(90deg, transparent 0%, hsl(25 95% 60% / 0.1) 50%, transparent 100%),
+      linear-gradient(0deg, transparent 0%, hsl(185 84% 25% / 0.1) 50%, transparent 100%);
+    background-size: 40px 40px, 40px 40px;
+    animation: matrixFlow 6s linear infinite;
+  }
+
+  .data-bg {
+    background: var(--gradient-data);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .data-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(45deg, hsl(185 84% 25% / 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(25 95% 60% / 0.1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(185 84% 25% / 0.1) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(25 95% 60% / 0.1) 75%);
+    background-size: 30px 30px;
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+    animation: dataStream 10s ease-in-out infinite;
+  }
+
+  .circuit-bg {
+    background: var(--gradient-circuit);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circuit-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(185 84% 25% / 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 80% 50%, hsl(25 95% 60% / 0.3) 2px, transparent 2px),
+      linear-gradient(90deg, transparent 40%, hsl(185 84% 25% / 0.15) 50%, transparent 60%);
+    background-size: 100px 50px, 100px 50px, 200px 100px;
+    animation: circuitGlow 12s ease-in-out infinite;
+  }
+
+  .ai-glow-bg {
+    background: var(--gradient-ai-glow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-glow-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 30% 30%, hsl(185 84% 25% / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, hsl(25 95% 60% / 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 50% 90%, hsl(185 84% 25% / 0.1) 0%, transparent 60%);
+    animation: aiGlow 15s ease-in-out infinite;
+  }
+
+  .tech-pattern-bg {
+    background: var(--gradient-tech);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-pattern-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        hsl(185 84% 25% / 0.05) 2px,
+        hsl(185 84% 25% / 0.05) 4px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 2px,
+        hsl(25 95% 60% / 0.05) 2px,
+        hsl(25 95% 60% / 0.05) 4px
+      );
+    animation: techPattern 20s linear infinite;
+  }
+
   /* Hero Section Styles */
   .hero-gradient {
     background: var(--gradient-hero);
@@ -249,6 +394,38 @@
   to {
     width: var(--width);
   }
+}
+
+/* AI/ML Background Animations */
+@keyframes neuralPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes matrixFlow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes dataStream {
+  0% { background-position: 0 0, 0 15px, 15px -15px, -15px 0px; }
+  100% { background-position: 30px 30px, 30px 45px, 45px 15px, 15px 30px; }
+}
+
+@keyframes circuitGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes aiGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  33% { opacity: 0.8; transform: scale(1.05); }
+  66% { opacity: 0.6; transform: scale(0.95); }
+}
+
+@keyframes techPattern {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
 }
 
 /* Smooth scroll offset for fixed nav */

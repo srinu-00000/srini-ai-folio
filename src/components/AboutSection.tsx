@@ -2,7 +2,7 @@ import { User, Target, Heart } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-background">
+    <section id="about" className="section-padding ai-glow-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

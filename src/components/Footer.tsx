@@ -19,8 +19,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-primary text-primary-foreground py-12 relative overflow-hidden">
+      {/* Background tech pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-45 scale-150"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-4 left-1/4 w-16 h-16 border border-white/10 rotate-45"></div>
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Branding */}
           <div className="text-center md:text-left">

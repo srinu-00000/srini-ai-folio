@@ -101,7 +101,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section id="contact" className="section-padding ai-glow-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

@@ -72,7 +72,7 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="section-padding bg-background">
+    <section id="education" className="section-padding data-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

@@ -36,7 +36,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding bg-background">
+    <section id="projects" className="section-padding tech-pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

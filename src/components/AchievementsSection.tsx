@@ -66,7 +66,7 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section id="achievements" className="section-padding bg-secondary/30">
+    <section id="achievements" className="section-padding circuit-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

@@ -92,7 +92,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-secondary/30" ref={sectionRef}>
+    <section id="skills" className="section-padding matrix-bg" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <div className="flex items-center justify-center mb-4">

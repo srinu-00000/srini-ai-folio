@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center hero-gradient text-white relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center neural-bg text-white relative overflow-hidden">
       {/* Background Animation Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
