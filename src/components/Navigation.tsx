@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -53,7 +54,8 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button variant="outline-accent" size="sm">
+            <ThemeToggle />
+            <Button variant="outline" size="sm" className="border-border hover:bg-card">
               <Download className="w-4 h-4 mr-2" />
               Resume
             </Button>
@@ -81,10 +83,13 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button variant="outline-accent" size="sm" className="w-full mt-4">
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </Button>
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <ThemeToggle />
+                <Button variant="outline" size="sm" className="border-border hover:bg-card">
+                  <Download className="w-4 h-4 mr-2" />
+                  Resume
+                </Button>
+              </div>
             </div>
           </div>
         )}
