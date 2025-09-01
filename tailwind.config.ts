@@ -52,6 +52,10 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))',
 					hover: 'hsl(var(--accent-hover))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -70,6 +74,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			spacing: {
+				'18': '4.5rem',
+				'88': '22rem',
+				'128': '32rem',
+				'144': '36rem',
+			},
+			maxWidth: {
+				'8xl': '88rem',
+				'9xl': '96rem',
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-sm)',
+				'medium': 'var(--shadow-md)',
+				'large': 'var(--shadow-lg)',
+				'extra': 'var(--shadow-xl)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -97,7 +117,13 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'spin-slow': 'spin 8s linear infinite'
+				'spin-slow': 'spin 8s linear infinite',
+				'fade-in-up': 'fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+				'fade-in-down': 'fade-in-down 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+				'slide-in-left': 'slide-in-left 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+				'slide-in-right': 'slide-in-right 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+				'scale-bounce': 'scale-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'gradient-shift': 'gradient-shift 3s ease infinite'
 			}
 		}
 	},
