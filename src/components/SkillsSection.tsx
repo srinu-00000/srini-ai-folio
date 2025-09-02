@@ -92,13 +92,13 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding particles-bg" ref={sectionRef}>
+    <section id="skills" className="py-20 bg-gradient-to-br from-background to-secondary/20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="text-caption gradient-neon mb-4">
+          <div className="text-caption mb-4">
             Technical Expertise
           </div>
-          <h2 className="text-heading gradient-text animate-glow-pulse">Skills & Technologies</h2>
+          <h2 className="text-heading gradient-text">Skills & Technologies</h2>
           <p className="text-body max-w-2xl mx-auto mt-6">
             Cutting-edge technologies and frameworks I use to build intelligent solutions
           </p>
@@ -106,21 +106,21 @@ const SkillsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={category.title} className="card-glass glow-effect animate-scale-bounce" style={{ animationDelay: `${categoryIndex * 150}ms` }}>
+            <div key={category.title} className="card-glass glow-hover animate-scale-bounce" style={{ animationDelay: `${categoryIndex * 150}ms` }}>
               <div className="p-6">
                 <div className="flex items-center mb-6">
-                  <category.icon className="w-8 h-8 text-neon mr-3 animate-float" />
+                  <category.icon className="w-8 h-8 text-primary mr-3 animate-float" />
                   <h3 className="text-subheading font-semibold text-foreground">{category.title}</h3>
                 </div>
 
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skill.name} className="flex items-center justify-between">
-                      <span className="text-tech">
+                      <span className="text-body font-medium">
                         {skill.name}
                       </span>
-                      <div className="w-8 h-8 rounded-full border-2 border-neon/30 flex items-center justify-center neon-glow">
-                        <div className="w-4 h-4 rounded-full bg-neon animate-pulse"></div>
+                      <div className="w-8 h-8 rounded-full border-2 border-primary/30 flex items-center justify-center professional-glow">
+                        <div className="w-4 h-4 rounded-full bg-primary animate-pulse"></div>
                       </div>
                     </div>
                   ))}

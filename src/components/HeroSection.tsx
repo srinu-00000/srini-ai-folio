@@ -20,7 +20,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center hero-bg particles-bg floating-shapes overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center hero-bg floating-shapes overflow-hidden">
       {/* Particle Background */}
       <ParticleBackground />
       
@@ -29,10 +29,10 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-6">
-              <div className="text-caption gradient-neon">
+              <div className="text-caption">
                 Hello, I'm
               </div>
-              <h1 className="text-display gradient-text animate-glow-pulse">
+              <h1 className="text-display gradient-text">
                 H. Srinivas
               </h1>
               <div className="text-subheading text-foreground min-h-[1.5em]">
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="card-glass glow-effect animate-scale-bounce animate-delay-300 text-primary-foreground font-semibold"
+                className="glass-button glow-hover text-primary-foreground font-semibold"
                 onClick={scrollToContact}
               >
                 <Mail className="w-5 h-5 mr-2" />
@@ -63,7 +63,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="card-glass border-neon/30 hover:border-neon hover:shadow-neon animate-scale-bounce animate-delay-450 text-foreground hover:text-neon"
+                className="glass-button border-primary/30 hover:border-primary text-foreground hover:text-primary"
               >
                 <Download className="w-5 h-5 mr-2" />
                 Resume
@@ -71,7 +71,7 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 animate-slide-in-left animate-delay-600">
+            <div className="flex gap-4 animate-slide-in-left" style={{ animationDelay: '0.6s' }}>
               {[
                 { Icon: Github, href: "#", label: "GitHub" },
                 { Icon: Linkedin, href: "#", label: "LinkedIn" }
@@ -80,7 +80,7 @@ const HeroSection = () => {
                   key={label}
                   variant="ghost"
                   size="icon"
-                  className="card-glass hover:neon-glow transition-all duration-500 hover:scale-110 animate-scale-bounce text-muted-foreground hover:text-neon"
+                  className="glass-button glow-hover transition-all duration-500 hover:scale-110 text-muted-foreground hover:text-primary"
                   style={{ animationDelay: `${700 + index * 100}ms` }}
                   asChild
                 >
@@ -93,10 +93,10 @@ const HeroSection = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in-up animate-delay-300">
+          <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="relative animate-float">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full card-glass p-3 glow-effect">
-                <div className="w-full h-full rounded-full overflow-hidden gradient-border">
+                <div className="w-full h-full rounded-full overflow-hidden border-2 border-primary/20">
                   <img
                     src={profilePhoto}
                     alt="H. Srinivas - AI/ML Engineer"
@@ -105,9 +105,9 @@ const HeroSection = () => {
                 </div>
               </div>
               {/* Floating geometric elements */}
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-neon/20 rounded-full animate-float neon-glow"></div>
-              <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-primary/20 rounded-full animate-float glow-effect" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 -right-12 w-8 h-8 bg-accent/30 rounded-full animate-float neon-glow" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-primary/20 rounded-full animate-float professional-glow"></div>
+              <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-accent/20 rounded-full animate-float glow-effect" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 -right-12 w-8 h-8 bg-primary/30 rounded-full animate-float professional-glow" style={{ animationDelay: '2s' }}></div>
             </div>
           </div>
         </div>
@@ -115,8 +115,8 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-        <div className="w-6 h-12 border-2 border-neon/50 rounded-full flex justify-center relative neon-glow">
-          <div className="w-1.5 h-4 bg-neon rounded-full mt-3 animate-pulse"></div>
+        <div className="w-6 h-12 border-2 border-primary/50 rounded-full flex justify-center relative professional-glow">
+          <div className="w-1.5 h-4 bg-primary rounded-full mt-3 animate-pulse"></div>
         </div>
       </div>
     </section>

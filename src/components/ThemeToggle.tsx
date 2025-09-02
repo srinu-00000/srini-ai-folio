@@ -13,57 +13,35 @@ const ThemeToggle = () => {
   }, []);
 
   const applyTheme = (newTheme: string) => {
-    // Remove all theme classes
-    document.body.classList.remove('theme-light', 'theme-dark', 'theme-gradient');
+    // Remove theme classes
+    document.body.classList.remove('theme-light', 'theme-dark');
     // Add the new theme class
     document.body.classList.add(`theme-${newTheme}`);
     // Save to localStorage
     localStorage.setItem('theme', newTheme);
   };
 
-  const cycleTheme = () => {
-    const themes = ['dark', 'light', 'gradient']; // Dark first
-    const currentIndex = themes.indexOf(theme);
-    const nextIndex = (currentIndex + 1) % themes.length;
-    const nextTheme = themes[nextIndex];
-    
-    setTheme(nextTheme);
-    applyTheme(nextTheme);
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    applyTheme(newTheme);
   };
 
   const getThemeIcon = () => {
-    switch (theme) {
-      case 'light':
-        return <Sun className="w-4 h-4" />;
-      case 'dark':
-        return <Moon className="w-4 h-4" />;
-      case 'gradient':
-        return <Palette className="w-4 h-4" />;
-      default:
-        return <Sun className="w-4 h-4" />;
-    }
+    return theme === 'light' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />;
   };
 
   const getThemeLabel = () => {
-    switch (theme) {
-      case 'light':
-        return 'Light';
-      case 'dark':
-        return 'Dark';
-      case 'gradient':
-        return 'Gradient';
-      default:
-        return 'Light';
-    }
+    return theme === 'light' ? 'Light' : 'Dark';
   };
 
   return (
     <Button
       variant="ghost"
       size="sm"
-      onClick={cycleTheme}
-      className="hover:bg-card/80 transition-all duration-300"
-      title={`Current theme: ${getThemeLabel()}. Click to change.`}
+      onClick={toggleTheme}
+      className="glass-button transition-all duration-300"
+      title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {getThemeIcon()}
       <span className="ml-2 hidden sm:inline">{getThemeLabel()}</span>

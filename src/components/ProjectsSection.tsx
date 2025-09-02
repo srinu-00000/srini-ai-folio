@@ -36,13 +36,13 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 particles-bg">
+    <section id="projects" className="py-20 bg-gradient-to-br from-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="text-caption gradient-neon mb-4">
+          <div className="text-caption mb-4">
             Featured Work
           </div>
-          <h2 className="text-heading gradient-text animate-glow-pulse">Projects</h2>
+          <h2 className="text-heading gradient-text">Projects</h2>
           <p className="text-body max-w-2xl mx-auto mt-6">
             AI-powered solutions and full-stack applications showcasing innovation
           </p>
@@ -50,9 +50,9 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={project.title} className="card-glass glow-effect group animate-scale-bounce" style={{ animationDelay: `${index * 200}ms` }}>
+            <div key={project.title} className="card-glass glow-hover group animate-scale-bounce" style={{ animationDelay: `${index * 200}ms` }}>
               {/* Project Image */}
-              <div className="relative overflow-hidden rounded-t-3xl">
+              <div className="relative overflow-hidden rounded-t-2xl">
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -60,20 +60,20 @@ const ProjectsSection = () => {
                 />
                 {project.featured && (
                   <div className="absolute top-4 right-4">
-                    <span className="bg-neon text-background px-3 py-1 rounded-full text-sm font-medium neon-glow">
+                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium professional-glow">
                       Featured
                     </span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-neon/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
                   <div className="flex space-x-4">
-                    <Button variant="outline" size="sm" className="card-glass border-neon/30 hover:border-neon text-neon hover:neon-glow" asChild>
+                    <Button variant="outline" size="sm" className="glass-button border-primary/30 hover:border-primary text-primary" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </a>
                     </Button>
-                    <Button size="sm" className="card-glass glow-effect bg-neon text-background hover:bg-neon-green" asChild>
+                    <Button size="sm" className="glass-button bg-primary text-primary-foreground hover:bg-primary-hover glow-effect" asChild>
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Demo
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-subheading font-semibold mb-3 group-hover:text-neon transition-colors duration-300">
+                <h3 className="text-subheading font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-body mb-4">
@@ -97,7 +97,7 @@ const ProjectsSection = () => {
                   {project.technologies.map((tech) => (
                     <span 
                       key={tech}
-                      className="text-tech px-3 py-1 bg-neon/10 border border-neon/30 rounded-full text-sm neon-glow"
+                      className="text-sm px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary font-medium professional-glow"
                     >
                       {tech}
                     </span>
@@ -106,13 +106,13 @@ const ProjectsSection = () => {
 
                 {/* Project Links */}
                 <div className="flex space-x-3">
-                  <Button variant="outline" size="sm" className="flex-1 border-neon/30 hover:border-neon text-neon" asChild>
+                  <Button variant="outline" size="sm" className="flex-1 border-primary/30 hover:border-primary text-primary" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-neon text-background hover:bg-neon-green neon-glow" asChild>
+                  <Button size="sm" className="flex-1 bg-primary text-primary-foreground hover:bg-primary-hover professional-glow" asChild>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Demo
@@ -125,7 +125,7 @@ const ProjectsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="card-glass glow-effect border-neon/30 hover:border-neon text-neon" asChild>
+          <Button size="lg" className="glass-button border-primary/30 hover:border-primary text-primary glow-hover" asChild>
             <a href="#" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5 mr-2" />
               View All Projects on GitHub

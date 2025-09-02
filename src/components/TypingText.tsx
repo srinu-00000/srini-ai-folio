@@ -54,7 +54,7 @@ const TypingText = ({
   return (
     <span className={`inline-block ${className}`}>
       {displayText}
-      <span className="animate-pulse text-neon">|</span>
+      <span className="animate-pulse text-primary">|</span>
     </span>
   );
 };
