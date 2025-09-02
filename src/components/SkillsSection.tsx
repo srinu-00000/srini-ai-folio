@@ -92,49 +92,39 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding matrix-bg" ref={sectionRef}>
+    <section id="skills" className="section-padding particles-bg" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
-          <div className="flex items-center justify-center mb-4">
-            <Zap className="w-8 h-8 text-primary mr-3" />
-            <h2 className="heading-lg">Skills & Technologies</h2>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-caption gradient-neon mb-4">
+            Technical Expertise
           </div>
-          <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
+          <h2 className="text-heading gradient-text animate-glow-pulse">Skills & Technologies</h2>
+          <p className="text-body max-w-2xl mx-auto mt-6">
+            Cutting-edge technologies and frameworks I use to build intelligent solutions
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={category.title} className="project-card p-6 animate-scale-in">
-              <div className="flex items-center mb-6">
-                <category.icon className="w-8 h-8 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">{category.title}</h3>
-              </div>
+            <div key={category.title} className="card-glass glow-effect animate-scale-bounce" style={{ animationDelay: `${categoryIndex * 150}ms` }}>
+              <div className="p-6">
+                <div className="flex items-center mb-6">
+                  <category.icon className="w-8 h-8 text-neon mr-3 animate-float" />
+                  <h3 className="text-subheading font-semibold text-foreground">{category.title}</h3>
+                </div>
 
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-foreground">
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skill.name} className="flex items-center justify-between">
+                      <span className="text-tech">
                         {skill.name}
                       </span>
-                      <span className="text-sm text-muted-foreground">
-                        {skill.level}%
-                      </span>
+                      <div className="w-8 h-8 rounded-full border-2 border-neon/30 flex items-center justify-center neon-glow">
+                        <div className="w-4 h-4 rounded-full bg-neon animate-pulse"></div>
+                      </div>
                     </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress"
-                        style={{
-                          '--width': isVisible ? `${skill.level}%` : '0%',
-                          animationDelay: `${categoryIndex * 200 + skillIndex * 100}ms`
-                        } as React.CSSProperties}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           ))}

@@ -3,11 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Sun, Moon, Palette } from 'lucide-react';
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark'); // Default to dark theme
 
   useEffect(() => {
     // Get theme from localStorage or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
     setTheme(savedTheme);
     applyTheme(savedTheme);
   }, []);
@@ -22,7 +22,7 @@ const ThemeToggle = () => {
   };
 
   const cycleTheme = () => {
-    const themes = ['light', 'dark', 'gradient'];
+    const themes = ['dark', 'light', 'gradient']; // Dark first
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     const nextTheme = themes[nextIndex];

@@ -19,10 +19,12 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sans: ["Inter", "sans-serif"],
+				'poppins': ['Poppins', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
-				'space': ['Space Grotesk', 'sans-serif'],
-				'mono': ['JetBrains Mono', 'monospace'],
-				'tech': ['Orbitron', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'open-sans': ['Open Sans', 'sans-serif'],
+				'lato': ['Lato', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -73,7 +75,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				neon: "hsl(var(--neon))",
+				"neon-green": "hsl(var(--neon-green))",
+				glass: {
+					bg: "hsl(var(--glass-bg))",
+					border: "hsl(var(--glass-border))",
+				},
 			},
 			spacing: {
 				'18': '4.5rem',
@@ -90,6 +98,8 @@ export default {
 				'medium': 'var(--shadow-md)',
 				'large': 'var(--shadow-lg)',
 				'extra': 'var(--shadow-xl)',
+				'glow': 'var(--shadow-glow)',
+				'neon': 'var(--shadow-neon)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
