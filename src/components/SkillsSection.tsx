@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Code, Brain, Database, Globe, Server, Zap } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,66 +27,66 @@ const SkillsSection = () => {
       title: 'AI & Machine Learning',
       icon: Brain,
       skills: [
-        { name: 'Python', level: 90 },
-        { name: 'TensorFlow/Keras', level: 85 },
-        { name: 'PyTorch', level: 80 },
-        { name: 'Scikit-learn', level: 88 },
-        { name: 'OpenCV', level: 75 },
+        'Python',
+        'TensorFlow/Keras', 
+        'PyTorch',
+        'Scikit-learn',
+        'OpenCV'
       ]
     },
     {
       title: 'Programming Languages',
       icon: Code,
       skills: [
-        { name: 'Python', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'Java', level: 80 },
-        { name: 'C++', level: 75 },
-        { name: 'TypeScript', level: 82 },
+        'Python',
+        'JavaScript',
+        'Java', 
+        'C++',
+        'TypeScript'
       ]
     },
     {
       title: 'Web Development',
       icon: Globe,
       skills: [
-        { name: 'React', level: 88 },
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 83 },
-        { name: 'HTML/CSS', level: 92 },
-        { name: 'MongoDB', level: 80 },
+        'React',
+        'Node.js',
+        'Express.js',
+        'HTML/CSS', 
+        'MongoDB'
       ]
     },
     {
       title: 'Data & Databases',
       icon: Database,
       skills: [
-        { name: 'SQL', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'Redis', level: 75 },
-        { name: 'Data Analysis', level: 88 },
+        'SQL',
+        'PostgreSQL',
+        'MongoDB',
+        'Redis',
+        'Data Analysis'
       ]
     },
     {
       title: 'Cloud & DevOps',
       icon: Server,
       skills: [
-        { name: 'AWS', level: 78 },
-        { name: 'Docker', level: 80 },
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'Linux', level: 82 },
-        { name: 'CI/CD', level: 75 },
+        'AWS',
+        'Docker',
+        'Git/GitHub',
+        'Linux',
+        'CI/CD'
       ]
     },
     {
       title: 'Tools & Frameworks',
       icon: Zap,
       skills: [
-        { name: 'Jupyter Notebook', level: 90 },
-        { name: 'VS Code', level: 95 },
-        { name: 'Postman', level: 85 },
-        { name: 'Figma', level: 70 },
-        { name: 'Firebase', level: 80 },
+        'Jupyter Notebook',
+        'VS Code',
+        'Postman',
+        'Figma',
+        'Firebase'
       ]
     }
   ];
@@ -114,33 +113,13 @@ const SkillsSection = () => {
                   <h3 className="text-subheading font-semibold text-foreground">{category.title}</h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name} className="group">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-body font-medium group-hover:text-primary transition-colors duration-300">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-muted-foreground font-medium">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="relative">
-                        <Progress 
-                          value={isVisible ? skill.level : 0} 
-                          className="h-2 bg-secondary/50"
-                        />
-                        <div 
-                          className="absolute top-0 left-0 h-2 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out professional-glow"
-                          style={{ 
-                            width: isVisible ? `${skill.level}%` : '0%',
-                            transitionDelay: `${skillIndex * 100}ms`
-                          }}
-                        />
-                      </div>
-                      <div className="mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {skill.level >= 90 ? 'Expert' : skill.level >= 80 ? 'Advanced' : skill.level >= 70 ? 'Intermediate' : 'Beginner'}
-                      </div>
+                    <div key={skill} className="flex items-center justify-between p-3 bg-primary/5 border border-primary/20 rounded-lg hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 group">
+                      <span className="text-body font-medium group-hover:text-primary transition-colors duration-300">
+                        {skill}
+                      </span>
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
                     </div>
                   ))}
                 </div>
