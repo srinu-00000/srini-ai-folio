@@ -22,182 +22,89 @@ const EducationSection = () => {
     }
   ];
 
-  const certifications = [
-    {
-      name: 'Salesforce AI Specialist (Agentforce Workshop)',
-      issuer: 'GeeksforGeeks & Salesforce',
-      date: '2024',
-      credentialId: 'SFAI-2024-HSR',
-      skills: ['Salesforce', 'AI Agents', 'Agentforce', 'Business AI Solutions'],
-      description: 'Successfully completed an industry-grade workshop on building AI Agents using Agentforce. Gained hands-on experience in designing intelligent agents, integrating AI into Salesforce workflows, and solving real-world business use cases with scalable AI solutions.'
-    },
-    {
-      name: 'IBM Certified in Enterprise-Grade AI',
-      issuer: 'IBM',
-      date: 'June 2024',
-      credentialId: 'IBM-AI-2024-HSR',
-      skills: ['Enterprise AI', 'AI Model Deployment', 'Scalable Solutions', 'AI Strategy'],
-      description: 'Industry-recognized certification focusing on developing and deploying AI-powered solutions at scale. Gained expertise in applying AI models to enterprise challenges.'
-    },
-    {
-      name: 'EZ Training – Python Programming',
-      issuer: 'EZ Training',
-      date: '2024',
-      credentialId: 'EZ-PY-2024-HSR',
-      skills: ['Python', 'Problem Solving', 'Application Development', 'Coding Challenges'],
-      description: 'Completed professional training in Python programming, with emphasis on problem-solving, application building, and preparing for coding challenges.'
-    },
-    {
-      name: 'Java Full Stack with React JS & AI',
-      issuer: 'Brainovision & AICTE',
-      date: 'Dec 2024',
-      credentialId: 'JSFS-AI-2024-HSR',
-      skills: ['Java', 'React JS', 'Full Stack', 'AI Integration', 'Enterprise Applications'],
-      description: 'Hands-on training in Java Full Stack development with React JS integration, combined with practical applications of Artificial Intelligence. Strengthened ability to create enterprise-level applications.'
-    },
-    {
-      name: 'AWS Certified Cloud Practitioner',
-      issuer: 'Amazon Web Services',
-      date: 'Mar 2024',
-      credentialId: 'AWS-CCP-2024-HSR',
-      skills: ['AWS', 'Cloud Computing', 'EC2', 'S3']
-    },
-    {
-      name: 'Full Stack Web Development',
-      issuer: 'freeCodeCamp',
-      date: 'Aug 2023',
-      credentialId: 'FCC-FSWD-2023-HSR',
-      skills: ['React', 'Node.js', 'MongoDB', 'Express.js']
-    }
-  ];
 
   return (
-    <section id="education" className="section-padding data-bg">
+    <section id="education" className="py-20 bg-gradient-to-br from-background to-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
-          <div className="flex items-center justify-center mb-4">
-            <GraduationCap className="w-8 h-8 text-primary mr-3" />
-            <h2 className="heading-lg">Education & Certifications</h2>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-caption mb-4">
+            Academic Background
           </div>
-          <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My academic journey and professional certifications
+          <h2 className="text-heading gradient-text">Education</h2>
+          <p className="text-body max-w-2xl mx-auto mt-6">
+            My academic journey and foundational learning
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Education */}
-          <div className="mb-16">
-            <div className="flex items-center mb-8">
-              <BookOpen className="w-6 h-6 text-primary mr-2" />
-              <h3 className="heading-md">Academic Background</h3>
-            </div>
+        <div className="max-w-4xl mx-auto">
 
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <div key={index} className="project-card p-6 animate-slide-in">
-                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
-                    <div className="mb-4 lg:mb-0">
-                      <h4 className="text-xl font-semibold text-foreground mb-2">
-                        {edu.degree}
-                      </h4>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-muted-foreground">
-                        <span className="font-medium text-primary">{edu.institution}</span>
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-1" />
-                          {edu.location}
-                        </div>
-                        <div className="flex items-center">
-                          <Calendar className="w-4 h-4 mr-1" />
-                          {edu.period}
-                        </div>
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div key={index} className="card-glass p-8 glow-hover animate-scale-bounce" style={{ animationDelay: `${index * 200}ms` }}>
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
+                  <div className="mb-4 lg:mb-0">
+                    <h3 className="text-subheading font-bold text-foreground mb-3 gradient-text">
+                      {edu.degree}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-muted-foreground">
+                      <span className="font-semibold text-primary text-lg">{edu.institution}</span>
+                      <div className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-2 text-accent" />
+                        {edu.location}
                       </div>
-                    </div>
-                    <div className="flex flex-col items-start lg:items-end gap-2">
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        edu.status === 'Currently Pursuing' 
-                          ? 'bg-blue-100 text-blue-800' 
-                          : 'bg-green-100 text-green-800'
-                      }`}>
-                        {edu.status}
-                      </span>
-                      <div className="flex items-center text-accent font-semibold">
-                        <Award className="w-4 h-4 mr-1" />
-                        {edu.gpa}
+                      <div className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-2 text-accent" />
+                        {edu.period}
                       </div>
                     </div>
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h5 className="font-medium mb-3 text-foreground">Highlights:</h5>
-                      <ul className="space-y-2">
-                        {edu.highlights.map((highlight, hIndex) => (
-                          <li key={hIndex} className="flex items-start text-muted-foreground">
-                            <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h5 className="font-medium mb-3 text-foreground">Notable Projects:</h5>
-                      <ul className="space-y-2">
-                        {edu.projects.map((project, pIndex) => (
-                          <li key={pIndex} className="flex items-start text-muted-foreground">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span>{project}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  <div className="flex flex-col items-start lg:items-end gap-3">
+                    <span className={`px-4 py-2 rounded-xl text-sm font-semibold border ${
+                      edu.status === 'Currently Pursuing' 
+                        ? 'bg-primary/10 text-primary border-primary/30' 
+                        : 'bg-accent/10 text-accent border-accent/30'
+                    }`}>
+                      {edu.status}
+                    </span>
+                    <div className="flex items-center text-accent font-bold text-lg">
+                      <Award className="w-5 h-5 mr-2" />
+                      {edu.gpa}
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Certifications */}
-          <div>
-            <div className="flex items-center mb-8">
-              <Award className="w-6 h-6 text-primary mr-2" />
-              <h3 className="heading-md">Professional Certifications</h3>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <div key={index} className="project-card p-6 animate-scale-in">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{cert.name}</h4>
-                      <p className="text-primary font-medium">{cert.issuer}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{cert.date}</span>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground text-lg mb-4 flex items-center">
+                      <div className="w-2 h-6 bg-gradient-to-b from-primary to-accent rounded-full mr-3"></div>
+                      Academic Highlights
+                    </h4>
+                    <ul className="space-y-3">
+                      {edu.highlights.map((highlight, hIndex) => (
+                        <li key={hIndex} className="flex items-start text-muted-foreground hover:text-foreground transition-colors duration-300">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2.5 mr-4 flex-shrink-0 animate-pulse"></div>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  
-                  {cert.description && (
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                      {cert.description}
-                    </p>
-                  )}
-                  
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Credential ID: {cert.credentialId}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {cert.skills.map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-2 py-1 bg-secondary text-secondary-foreground rounded text-xs"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground text-lg mb-4 flex items-center">
+                      <div className="w-2 h-6 bg-gradient-to-b from-accent to-primary rounded-full mr-3"></div>
+                      Research & Projects
+                    </h4>
+                    <ul className="space-y-3">
+                      {edu.projects.map((project, pIndex) => (
+                        <li key={pIndex} className="flex items-start text-muted-foreground hover:text-foreground transition-colors duration-300">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0 animate-pulse"></div>
+                          <span>{project}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

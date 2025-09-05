@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Code, Brain, Database, Globe, Server, Zap } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -115,12 +116,30 @@ const SkillsSection = () => {
 
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name} className="flex items-center justify-between">
-                      <span className="text-body font-medium">
-                        {skill.name}
-                      </span>
-                      <div className="w-8 h-8 rounded-full border-2 border-primary/30 flex items-center justify-center professional-glow">
-                        <div className="w-4 h-4 rounded-full bg-primary animate-pulse"></div>
+                    <div key={skill.name} className="group">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-body font-medium group-hover:text-primary transition-colors duration-300">
+                          {skill.name}
+                        </span>
+                        <span className="text-sm text-muted-foreground font-medium">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="relative">
+                        <Progress 
+                          value={isVisible ? skill.level : 0} 
+                          className="h-2 bg-secondary/50"
+                        />
+                        <div 
+                          className="absolute top-0 left-0 h-2 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out professional-glow"
+                          style={{ 
+                            width: isVisible ? `${skill.level}%` : '0%',
+                            transitionDelay: `${skillIndex * 100}ms`
+                          }}
+                        />
+                      </div>
+                      <div className="mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {skill.level >= 90 ? 'Expert' : skill.level >= 80 ? 'Advanced' : skill.level >= 70 ? 'Intermediate' : 'Beginner'}
                       </div>
                     </div>
                   ))}
